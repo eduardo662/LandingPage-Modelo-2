@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+Disallow: /processar.php
+Disallow: /.htaccess
+Disallow: /inscricoes.log
+Disallow: /security.js
+
+# Bloquear bots maliciosos conhecidos
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap
+Sitemap: https://seudominio.com/sitemap.xml 

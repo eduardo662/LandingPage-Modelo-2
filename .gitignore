@@ -1,0 +1,50 @@
+# Arquivos de log
+*.log
+inscricoes.log
+
+# Arquivos de configuração sensíveis
+.env
+config.php
+conexao.php
+credentials.php
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Diretórios de dependências
+/vendor/
+/node_modules/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos de IDE/editores
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.komodotools/
+.project
+.settings/
+.classpath
+.buildpath
+nbproject/
+
+# Arquivos de certificado SSL
+*.pem
+*.key
+*.crt
+*.cer
+*.der
+*.priv
+
+# Arquivos de backup
+*~
+*.bak
+*.backup 

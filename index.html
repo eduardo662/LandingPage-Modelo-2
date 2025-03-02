@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor10K - Curso de Edição de Vídeos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Meta tags de segurança -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.youtube.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube.com; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">Editor<span class="highlight">10K</span></h1>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2 class="headline">
+                    FAÇA DE <span class="highlight">R$5.000 A R$30.000 POR MÊS</span>
+                    <br>SOMENTE COM SEU CELULAR!
+                </h2>
+                <p class="subheadline">Assista o curto vídeo abaixo e entenda como:</p>
+                
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <div class="video-play-button" id="videoButton">
+                            <p>Seu vídeo já começou</p>
+                            <div class="mute-icon"></div>
+                            <p>Clique para ouvir</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-container">
+                    <a href="#form" class="cta-button pulse">QUERO APROVEITAR</a>
+                </div>
+            </section>
+
+            <section class="benefits">
+                <h2 class="section-title">AFINAL, GANHAR <span class="highlight">R$5.000,00 POR MÊS</span> EDITANDO VÍDEOS É POSSÍVEL?</h2>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎬</div>
+                        <h3>Edição Profissional</h3>
+                        <p>Aprenda técnicas avançadas de edição usadas por profissionais do mercado.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📱</div>
+                        <h3>Apenas com Celular</h3>
+                        <p>Não precisa de equipamentos caros, apenas seu smartphone é suficiente.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💰</div>
+                        <h3>Alta Demanda</h3>
+                        <p>O mercado de edição de vídeos nunca esteve tão aquecido e com tanta demanda.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🚀</div>
+                        <h3>Resultados Rápidos</h3>
+                        <p>Comece a faturar já nas primeiras semanas após dominar as técnicas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonials">
+                <h2 class="section-title">O QUE DIZEM NOSSOS ALUNOS</h2>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar"></div>
+                        <p class="testimonial-text">"Comecei do zero e hoje edito vídeos para influenciadores. Faturei R$7.500 no meu segundo mês!"</p>
+                        <p class="testimonial-author">- Carlos S.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar"></div>
+                        <p class="testimonial-text">"Nunca imaginei que poderia trabalhar com o que amo e ainda ganhar tão bem. Já são 6 meses faturando mais de R$15.000."</p>
+                        <p class="testimonial-author">- Amanda R.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-avatar"></div>
+                        <p class="testimonial-text">"Larguei meu emprego CLT para me dedicar à edição. Melhor decisão que já tomei na vida!"</p>
+                        <p class="testimonial-author">- Felipe M.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="offer" id="form">
+                <h2 class="section-title">GARANTA SUA VAGA COM <span class="highlight">DESCONTO ESPECIAL</span></h2>
+                <div class="price-container">
+                    <div class="old-price">De <span class="strikethrough">R$1.997,00</span></div>
+                    <div class="new-price">Por apenas <span class="highlight">R$997,00</span></div>
+                    <div class="installments">ou 12x de R$97,00</div>
+                </div>
+                
+                <form class="signup-form" id="signupForm" action="processar.php" method="POST" autocomplete="off">
+                    <!-- Token CSRF -->
+                    <input type="hidden" name="csrf_token" id="csrf_token" value="">
+                    
+                    <div class="form-group">
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]{3,100}" title="Por favor, insira um nome válido (apenas letras e espaços, entre 3 e 100 caracteres)">
+                        <div class="error-message" id="nome-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Seu melhor e-mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Por favor, insira um e-mail válido">
+                        <div class="error-message" id="email-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="Seu WhatsApp" required pattern="^\([0-9]{2}\)\s?[0-9]{4,5}-[0-9]{4}$" title="Por favor, insira um número no formato (99) 99999-9999">
+                        <div class="error-message" id="whatsapp-error"></div>
+                    </div>
+                    
+                    <!-- Honeypot para capturar bots -->
+                    <div class="honeypot-field">
+                        <input type="text" name="website" id="website" autocomplete="off">
+                    </div>
+                    
+                    <div class="recaptcha-container" id="recaptcha-container"></div>
+                    
+                    <button type="submit" class="submit-button pulse" id="submitBtn">QUERO COMEÇAR AGORA!</button>
+                </form>
+                
+                <div class="guarantee">
+                    <p>🔒 Garantia de 7 dias ou seu dinheiro de volta</p>
+                    <p>💳 Pagamento seguro via PIX, cartão ou boleto</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Editor10K - Todos os direitos reservados</p>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a> | 
+                <a href="#">Política de Privacidade</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="security.js"></script>
+</body>
+</html> 
